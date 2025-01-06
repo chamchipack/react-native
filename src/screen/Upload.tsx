@@ -1,9 +1,12 @@
 import {StyleSheet, View} from 'react-native';
 import InfiniteScrollComponent from './Test';
-function Upload() {
+import Payment from '../components/Payment/Payment';
+
+function Upload(props) {
   return (
     <View style={styles.container}>
       <InfiniteScrollComponent />
+      {/* <Payment navigation={props.navigation} /> */}
     </View>
   );
 }

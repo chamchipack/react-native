@@ -1,4 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useState} from 'react';
 import {
   StyleSheet,
@@ -8,11 +9,11 @@ import {
   View,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {NavigationProp} from '../../../navigation/type';
+import Input from './Input';
 
 const Head = () => {
-  const navigation = useNavigation();
-
-  const [text, setText] = useState('');
+  const navigation = useNavigation<NavigationProp>();
 
   const controlTextLength = (text: string, limit: number) => {
     return text.length > limit ? `${text.slice(0, 20)}...` : text;
@@ -47,18 +48,7 @@ const Head = () => {
         </View>
       </View>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="여기에 입력하세요"
-          value={text}
-          onChangeText={setText}
-          returnKeyType="search"
-        />
-        <TouchableOpacity style={styles.iconContainer}>
-          <MaterialIcons name="search" size={20} color="black" />
-        </TouchableOpacity>
-      </View>
+      <Input />
     </View>
   );
 };
@@ -80,29 +70,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  inputContainer: {
-    marginTop: 15,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 15,
-    paddingHorizontal: 10,
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
   iconContainer: {
     padding: 5, // 아이콘 주변 패딩
-  },
-  input: {
-    flex: 1, // 가능한 공간을 모두 차지
-    height: 40, // 입력 필드 높이
-    fontSize: 12, // 글자 크기
-    paddingLeft: 4,
   },
   title: {
     fontSize: 15,

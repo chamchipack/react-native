@@ -5,7 +5,7 @@ import Popular from '../components/List/Popular';
 import ContentList from '../components/List/ContentList';
 
 function ListScreen({route}) {
-  const {item = {}} = route?.params || {};
+  const item = route?.params || {};
   return (
     <SafeAreaView style={styles.container}>
       <Head />

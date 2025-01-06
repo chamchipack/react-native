@@ -8,7 +8,7 @@ function Head() {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <MaterialIcons
               name="arrow-back-ios-new"
               size={20}

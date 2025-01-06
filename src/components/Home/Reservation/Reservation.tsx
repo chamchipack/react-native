@@ -15,7 +15,7 @@ function Reservation() {
       </View>
 
       <ImageBackground
-        source={require('../../image/ticket2.png')}
+        source={require('../../../image/ticket2.png')}
         style={styles.image}
         resizeMode="cover">
         <View style={styles.body}>
@@ -24,8 +24,6 @@ function Reservation() {
               flexDirection: 'row',
               alignItems: 'center',
               height: 50,
-              // marginLeft: 0,
-              // marginTop: 10,
             }}>
             <View
               style={{
@@ -34,7 +32,7 @@ function Reservation() {
                 width: 50,
                 height: '100%',
                 borderRadius: 10,
-                backgroundColor: '#fff', // 배경색 추가 (필요 시)
+                backgroundColor: '#fff',
               }}
             />
             <View style={{marginLeft: 10}}>
@@ -46,7 +44,6 @@ function Reservation() {
           </View>
 
           <View style={styles.bottomRow}>
-            {/* <Text style={styles.cakeText}>레터링 케이크</Text> */}
             <Text style={styles.dateText}>2025. 01. 31 (월) 14:00</Text>
             <TouchableOpacity style={styles.chip} activeOpacity={0.5}>
               <Text style={styles.chipText}>예약 상세</Text>
@@ -63,7 +60,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingBottom: 10,
     paddingTop: 10,
-    height: 220, // 이미지와 내용이 잘 어우러지도록 높이 조정
+    height: 220,
     marginBottom: 30,
   },
   image: {
@@ -74,8 +71,8 @@ const styles = StyleSheet.create({
   body: {
     padding: 15,
     height: '100%',
-    backgroundColor: 'rgba(255, 255, 255, 0.2)', // 배경색과 투명도로 텍스트 가독성 향상
-    justifyContent: 'space-between', // 내용이 이미지 내에서 적절히 배치되도록
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    justifyContent: 'space-between',
   },
   storeName: {
     fontWeight: 'bold',

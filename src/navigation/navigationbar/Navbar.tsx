@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     height: 60,
     borderTopWidth: 1,
     borderTopColor: '#d9dbdb',
-    // opacity: 0.2, // 전체 Navbar의 투명도를 조절
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
