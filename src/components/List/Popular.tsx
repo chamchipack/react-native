@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 // 인기 가게 데이터 임포트
-import {popularStores} from './popular';
+import {popularStores, StoreList} from './popular';
 import {useNavigation} from '@react-navigation/native';
 
 // 화면 너비 계산
@@ -30,6 +30,8 @@ const Popular = ({name = ''}) => {
       setLoading(false);
     }, 1000);
 
+    console.log(StoreList);
+
     // Cleanup the timer on unmount
     return () => clearTimeout(timer);
   }, []);
@@ -42,7 +44,7 @@ const Popular = ({name = ''}) => {
       <Image source={item.image} style={styles.image} resizeMode="cover" />
       <View style={styles.textContainer}>
         <Text style={styles.storeName}>{item.name}</Text>
-        <Text style={styles.storeAddress}>{item.address}</Text>
+        <Text style={styles.storeAddress}>{item.price}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -52,41 +54,56 @@ const Popular = ({name = ''}) => {
     const skeletonItems = Array.from({length: 5});
 
     return (
-      <FlatList
-        data={skeletonItems}
-        renderItem={() => (
-          <View style={styles.itemContainer}>
-            <View style={styles.imageSkeleton} />
-            <View style={styles.textSkeletonContainer}>
-              <View style={styles.textSkeletonLineShort} />
-              <View style={styles.textSkeletonLineLong} />
-            </View>
-          </View>
-        )}
-        keyExtractor={(_, index) => `skeleton-${index}`}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.listContent}
-        ItemSeparatorComponent={() => <View style={{width: SPACING}} />}
-      />
+      <>
+        {Array.from({length: 5}, (_, index) => index + 1).map(item => (
+          <>
+            <FlatList
+              data={skeletonItems}
+              renderItem={() => (
+                <View style={styles.itemContainer}>
+                  <View style={styles.imageSkeleton} />
+                  <View style={styles.textSkeletonContainer}>
+                    <View style={styles.textSkeletonLineShort} />
+                    <View style={styles.textSkeletonLineLong} />
+                  </View>
+                </View>
+              )}
+              keyExtractor={(_, index) => `skeleton-${index}`}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.listContent}
+              ItemSeparatorComponent={() => <View style={{width: SPACING}} />}
+            />
+          </>
+        ))}
+      </>
     );
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{name || '레터링 케이크 가게이름'}</Text>
       {loading ? (
         renderSkeleton()
       ) : (
-        <FlatList
-          data={popularStores}
-          renderItem={renderItem}
-          keyExtractor={item => item.id.toString()} // Ensure id is a string
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.listContent}
-          ItemSeparatorComponent={() => <View style={{width: SPACING}} />}
-        />
+        <>
+          {StoreList.map(item => (
+            <View style={{marginTop: 10, marginBottom: 10}}>
+              <Text style={styles.title}>
+                {name || '레터링 케이크 가게이름'}
+              </Text>
+
+              <FlatList
+                data={item}
+                renderItem={renderItem}
+                keyExtractor={item => item.id.toString()} // Ensure id is a string
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.listContent}
+                ItemSeparatorComponent={() => <View style={{width: SPACING}} />}
+              />
+            </View>
+          ))}
+        </>
       )}
       <Text style={styles.sub}>최소 주문금액 20,000원</Text>
     </View>
@@ -102,7 +119,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
   },
   sub: {
     fontSize: 12,
@@ -113,6 +129,8 @@ const styles = StyleSheet.create({
     paddingRight: 15, // 마지막 아이템과 오른쪽 간격
   },
   itemContainer: {
+    marginTop: 10,
+    marginBottom: 10,
     width: ITEM_WIDTH,
     height: ITEM_HEIGHT,
     borderRadius: 10,

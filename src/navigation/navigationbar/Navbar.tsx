@@ -1,26 +1,59 @@
-import React from 'react';
+import {
+  useNavigation,
+  useNavigationState,
+  useRoute,
+} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+const navItems = [
+  {name: '홈', icon: 'home', route: 'Home'},
+  {name: 'Search', icon: 'search', route: 'Search'},
+  {name: 'Notifications', icon: 'notifications', route: 'Notifications'},
+  {name: '마이', icon: 'person', route: 'Profile'},
+];
+
 const Navbar = () => {
+  const navigation = useNavigation();
+  const [currentRouteName, setCurrentRouteName] = useState(
+    navigation.getCurrentRoute()?.name,
+  );
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('state', () => {
+      const route = navigation.getCurrentRoute();
+      if (route && route.name !== currentRouteName) {
+        setCurrentRouteName(route.name);
+      }
+    });
+
+    // 컴포넌트 언마운트 시 리스너 제거
+    return unsubscribe;
+  }, [navigation, currentRouteName]);
+
   return (
     <View style={styles.nav}>
-      <TouchableOpacity style={styles.navItem}>
-        <MaterialIcons name="home" size={24} color="#333" />
-        <Text style={styles.navText}>Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem}>
-        <MaterialIcons name="search" size={24} color="#333" />
-        <Text style={styles.navText}>Search</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem}>
-        <MaterialIcons name="notifications" size={24} color="#333" />
-        <Text style={styles.navText}>알림</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.navItem}>
-        <MaterialIcons name="person" size={24} color="#333" />
-        <Text style={styles.navText}>마이</Text>
-      </TouchableOpacity>
+      {navItems.map(item => {
+        const isActive = currentRouteName === item.route;
+        return (
+          <TouchableOpacity
+            key={item.route}
+            style={styles.navItem}
+            onPress={() => navigation.navigate(item.route)}
+            activeOpacity={0.7}>
+            <MaterialIcons
+              name={item.icon}
+              size={24}
+              color={isActive ? '#964F66' : '#333'}
+            />
+            <Text
+              style={[styles.navText, {color: isActive ? '#964F66' : '#333'}]}>
+              {item.name}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
     </View>
   );
 };

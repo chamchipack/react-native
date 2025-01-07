@@ -10,19 +10,19 @@ export const popularStores = [
     id: '2',
     name: '이디야커피 홍대점',
     address: '서울 마포구 홍익로 456',
-    image: require('../../image/olive.jpeg'),
+    image: require('../../image/hair.png'),
   },
   {
     id: '3',
     name: '할리스커피 명동점',
     address: '서울 중구 명동로 789',
-    image: require('../../image/olive.jpeg'),
+    image: require('../../image/cake.png'),
   },
   {
     id: '4',
     name: '커피빈 동대문점',
     address: '서울 종로구 동대문로 101',
-    image: require('../../image/olive.jpeg'),
+    image: require('../../image/kakao.png'),
   },
   {
     id: '5',

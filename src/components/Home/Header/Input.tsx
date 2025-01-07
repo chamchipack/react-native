@@ -2,6 +2,8 @@ import {useState} from 'react';
 import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+const inputColor = '#964F66';
+
 export default function Input() {
   const [text, setText] = useState('');
 
@@ -15,7 +17,7 @@ export default function Input() {
         returnKeyType="search"
       />
       <TouchableOpacity style={styles.iconContainer}>
-        <MaterialIcons name="search" size={20} color="black" />
+        <MaterialIcons name="search" size={20} color={inputColor} />
       </TouchableOpacity>
     </View>
   );
@@ -28,17 +30,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 15,
     paddingHorizontal: 10,
-    backgroundColor: '#fff',
+    backgroundColor: '#F2E8EB',
     // iOS 그림자
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    // Android 그림자
-    elevation: 3,
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 1,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
+    // // Android 그림자
+    // elevation: 3,
   },
   iconContainer: {
     padding: 5,
@@ -48,6 +50,6 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 14,
     paddingLeft: 4,
-    color: '#000', // 텍스트 색상 명시
+    color: inputColor, // 텍스트 색상 명시
   },
 });

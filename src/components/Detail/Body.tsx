@@ -1,10 +1,11 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-function Body() {
+function Body({...props}) {
+  const data = props?.data;
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>스타벅스 강남역점</Text>
+      <Text style={styles.title}>스타벅스 강남역점 {data.title}</Text>
       <Text style={styles.sub}>서울특별시 강남구 강남대로 21</Text>
 
       <View
@@ -23,109 +24,62 @@ function Body() {
 
       <View style={styles.division} />
 
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          // alignItems: 'center',
-          height: 100,
-        }}>
+      {data?.products.map((item: any) => (
         <View
+          key={item.id}
           style={{
-            borderWidth: 1,
-            borderColor: '#dfdfdf',
-            width: 100,
-            height: '100%',
-            borderRadius: 10,
-          }}
-        />
-        <View
-          style={{
-            marginLeft: 10,
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            paddingTop: 5,
-            paddingBottom: 5,
+            flexDirection: 'row',
+            // alignItems: 'center',
+            marginTop: 20,
+            height: 100,
           }}>
-          <View>
-            <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4c4d4c'}}>
-              상품이름 들어가는 곳
-            </Text>
+          <View
+            style={{
+              borderWidth: 1,
+              borderColor: '#dfdfdf',
+              width: 100,
+              height: '100%',
+              borderRadius: 10,
+              backgroundColor: '#dfdfdf',
+            }}
+          />
+          <View
+            style={{
+              marginLeft: 10,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              paddingTop: 5,
+              paddingBottom: 5,
+            }}>
+            <View>
+              <Text
+                style={{fontWeight: 'bold', fontSize: 16, color: '#4c4d4c'}}>
+                {item?.name || '상품이름 들어가는 곳'}
+              </Text>
+
+              <Text
+                style={{
+                  fontSize: 10,
+                  color: '#b1b5b4',
+                  marginTop: 4,
+                }}>
+                상품 설명에 대한 기입
+              </Text>
+            </View>
 
             <Text
               style={{
-                fontSize: 10,
-                color: '#b1b5b4',
+                fontSize: 14,
+                color: '#000000',
                 marginTop: 4,
               }}>
-              상품 설명에 대한 기입
+              {item?.price || '20,000원'}
             </Text>
           </View>
-
-          <Text
-            style={{
-              fontSize: 14,
-              color: '#000000',
-              marginTop: 4,
-            }}>
-            20,000원
-          </Text>
         </View>
-      </View>
-
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          // alignItems: 'center',
-          marginTop: 20,
-          height: 100,
-        }}>
-        <View
-          style={{
-            borderWidth: 1,
-            borderColor: '#dfdfdf',
-            width: 100,
-            height: '100%',
-            borderRadius: 10,
-            backgroundColor: '#dfdfdf',
-          }}
-        />
-        <View
-          style={{
-            marginLeft: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            paddingTop: 5,
-            paddingBottom: 5,
-          }}>
-          <View>
-            <Text style={{fontWeight: 'bold', fontSize: 16, color: '#4c4d4c'}}>
-              상품이름 들어가는 곳
-            </Text>
-
-            <Text
-              style={{
-                fontSize: 10,
-                color: '#b1b5b4',
-                marginTop: 4,
-              }}>
-              상품 설명에 대한 기입
-            </Text>
-          </View>
-
-          <Text
-            style={{
-              fontSize: 14,
-              color: '#000000',
-              marginTop: 4,
-            }}>
-            20,000원
-          </Text>
-        </View>
-      </View>
+      ))}
     </View>
   );
 }

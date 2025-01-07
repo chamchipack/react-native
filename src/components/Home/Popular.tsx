@@ -16,7 +16,7 @@ import {popularStores} from './popular';
 // 화면 너비 계산
 const screenWidth = Dimensions.get('window').width;
 const ITEM_WIDTH = 150; // 각 아이템의 너비
-const ITEM_HEIGHT = 200; // 각 아이템의 높이
+const ITEM_HEIGHT = 150; // 각 아이템의 높이
 const SPACING = 10; // 아이템 간 간격
 
 const Popular = () => {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#f0f0f0', // 배경색 설정 (선택 사항)
   },
   title: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 10,
   },
@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     overflow: 'hidden',
     position: 'relative',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5, // Android 그림자
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
+    // elevation: 5, // Android 그림자
   },
   image: {
     width: '100%',

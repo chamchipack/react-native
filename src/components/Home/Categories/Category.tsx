@@ -51,17 +51,17 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderRadius: 10,
     overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: '#dfdfdf',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: -2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    // borderWidth: 1,
+    // borderColor: '#dfdfdf',
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: -2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
 
-    elevation: 5,
+    // elevation: 5,
     backgroundColor: '#fff',
   },
   image: {

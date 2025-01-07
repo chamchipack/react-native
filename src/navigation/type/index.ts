@@ -6,11 +6,18 @@ export type ListProps = {
   image: any;
 };
 
+export type DetailProps = {
+  id: string;
+  name: string;
+  price: number;
+  image: any;
+};
+
 export type RootStackParamList = {
   Home: undefined;
   Upload: undefined;
   List: ListProps;
-  Detail: undefined;
+  Detail: DetailProps;
   Map: undefined;
 };
 

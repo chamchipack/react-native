@@ -1,11 +1,12 @@
 import {StyleSheet, View} from 'react-native';
 import Image from '../components/Map/Image';
 import Navermap from '../components/Map/Navermap';
+import Filter from '../components/Map/Filter';
 
 function Map() {
   return (
     <View style={styles.container}>
-      {/* <Image /> */}
+      <Filter />
       <Navermap />
     </View>
   );

@@ -24,7 +24,7 @@ const Head = () => {
       <View style={styles.header}>
         <View style={styles.header}>
           <Text style={styles.title}>
-            {controlTextLength('경기도 수원시 영통구 영통로525번길 35', 20)}
+            {controlTextLength('경기도 수원시', 20)}
           </Text>
           <MaterialIcons
             name="arrow-drop-down"

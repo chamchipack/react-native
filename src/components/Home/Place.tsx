@@ -7,18 +7,18 @@ function Place() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Map')}>
+      <TouchableOpacity>
         <View style={styles.body}>
           <Image
-            source={require('../../image/map.png')}
+            source={require('../../image/banner.png')}
             style={styles.image}
             resizeMode="cover"
           />
-          <View style={styles.overlay}>
+          {/* <View style={styles.overlay}>
             <Text style={styles.overlayText}>
               내 주변에 등록된 가게 살펴보기!
             </Text>
-          </View>
+          </View> */}
         </View>
       </TouchableOpacity>
     </View>
@@ -30,7 +30,9 @@ const styles = StyleSheet.create({
     // paddingHorizontal: 15,
     // paddingBottom: 10,
     // paddingTop: 10,
-    height: 100,
+    height: 150,
+    marginTop: 10,
+    marginBottom: 10,
   },
   body: {
     // borderRadius: 10,

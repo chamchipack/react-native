@@ -44,7 +44,7 @@ const ContentList = ({selectedId = ''}) => {
         {
           width: itemWidth,
           marginRight: spacing,
-          opacity: item.id === currentId ? 1 : 0.25,
+          opacity: item.id === currentId ? 1 : 0.3,
         },
       ]}>
       <View style={styles.imageContainer}>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   itemContainer: {
-    marginBottom: 20,
+    marginBottom: 30,
     alignItems: 'center',
   },
   imageContainer: {
@@ -100,15 +100,15 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: '#dfdfdf',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: -2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5, // Android 그림자
-    backgroundColor: '#fff',
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: -2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
+    // elevation: 5, // Android 그림자
+    // backgroundColor: '#fff',
   },
   image: {
     width: '100%',

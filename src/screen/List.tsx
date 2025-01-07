@@ -3,6 +3,7 @@ import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import Head from '../components/List/Head';
 import Popular from '../components/List/Popular';
 import ContentList from '../components/List/ContentList';
+import InfiniteScrollComponent from '../components/List/Stores/InfiniteScrollComponent';
 
 function ListScreen({route}) {
   const item = route?.params || {};
@@ -10,29 +11,18 @@ function ListScreen({route}) {
     <SafeAreaView style={styles.container}>
       <Head />
       <ContentList selectedId={item?.id || ''} />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View style={styles.space}></View>
-        <Popular name="이런 가게" />
-        <View style={styles.space}></View>
-        <Popular name="저런 가게" />
-        <View style={styles.space}></View>
-        <Popular />
-        <View style={styles.space}></View>
-        <Popular />
-      </ScrollView>
+      {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
+      {/* <Popular name="이런 가게" /> */}
+      <InfiniteScrollComponent />
+      {/* </ScrollView> */}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FCF7FA',
     flex: 1,
-  },
-  space: {
-    backgroundColor: 'white',
-    height: 10,
-    width: '100%',
   },
 });
 

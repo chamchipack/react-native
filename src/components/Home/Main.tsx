@@ -4,6 +4,7 @@ import Body from './Categories/Body';
 import Reservation from './Reservation/Reservation';
 import Place from './Place';
 import Popular from './Popular';
+import MapButton from './Map/MapButton';
 
 export default function Main() {
   return (
@@ -11,9 +12,8 @@ export default function Main() {
       <Header />
       <Body />
       <Reservation />
-      <View style={styles.space}></View>
       <Place />
-      <View style={styles.space}></View>
+      <MapButton />
       <Popular />
     </>
   );

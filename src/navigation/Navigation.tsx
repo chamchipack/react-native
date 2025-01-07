@@ -18,6 +18,7 @@ function MainNavigator() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FCF7FA',
   },
 });
 export default MainNavigator;
