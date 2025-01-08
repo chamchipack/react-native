@@ -2,7 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import Header from './Header/Header';
 import Body from './Categories/Body';
 import Reservation from './Reservation/Reservation';
-import Place from './Place';
+import Banner from './Banner';
 import Popular from './Popular';
 import MapButton from './Map/MapButton';
 
@@ -12,7 +12,7 @@ export default function Main() {
       <Header />
       <Body />
       <Reservation />
-      <Place />
+      <Banner />
       <MapButton />
       <Popular />
     </>

@@ -5,16 +5,13 @@ import Popular from '../components/List/Popular';
 import ContentList from '../components/List/ContentList';
 import InfiniteScrollComponent from '../components/List/Stores/InfiniteScrollComponent';
 
-function ListScreen({route}) {
+function StoreListScreen({route}: any) {
   const item = route?.params || {};
   return (
     <SafeAreaView style={styles.container}>
       <Head />
       <ContentList selectedId={item?.id || ''} />
-      {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
-      {/* <Popular name="이런 가게" /> */}
       <InfiniteScrollComponent />
-      {/* </ScrollView> */}
     </SafeAreaView>
   );
 }
@@ -26,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListScreen;
+export default StoreListScreen;

@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
-function Place() {
+function Banner() {
   const navigation = useNavigation();
 
   return (
@@ -14,11 +14,6 @@ function Place() {
             style={styles.image}
             resizeMode="cover"
           />
-          {/* <View style={styles.overlay}>
-            <Text style={styles.overlayText}>
-              내 주변에 등록된 가게 살펴보기!
-            </Text>
-          </View> */}
         </View>
       </TouchableOpacity>
     </View>
@@ -27,15 +22,11 @@ function Place() {
 
 const styles = StyleSheet.create({
   container: {
-    // paddingHorizontal: 15,
-    // paddingBottom: 10,
-    // paddingTop: 10,
     height: 150,
     marginTop: 10,
     marginBottom: 10,
   },
   body: {
-    // borderRadius: 10,
     borderColor: 'white',
     backgroundColor: 'white',
     height: '100%',
@@ -72,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Place;
+export default Banner;

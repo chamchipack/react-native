@@ -32,6 +32,8 @@ const Navbar = () => {
     return unsubscribe;
   }, [navigation, currentRouteName]);
 
+  if (currentRouteName === 'StoreDetail') return <></>;
+
   return (
     <View style={styles.nav}>
       {navItems.map(item => {

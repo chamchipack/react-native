@@ -117,6 +117,7 @@
 
 // export default Reservation;
 
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   StyleSheet,
@@ -126,8 +127,11 @@ import {
   ImageBackground,
   Image,
 } from 'react-native';
+import {NavigationProp} from '../../../navigation/type';
 
 function Reservation() {
+  const navigation = useNavigation<NavigationProp>();
+
   return (
     <View style={styles.container}>
       <View style={{marginBottom: 10, marginLeft: 4}}>
@@ -157,7 +161,10 @@ function Reservation() {
 
             <View style={styles.bottomRow}>
               <Text style={styles.dateText}>2025. 01. 31 (월) 14:00</Text>
-              <TouchableOpacity style={styles.chip} activeOpacity={0.5}>
+              <TouchableOpacity
+                style={styles.chip}
+                activeOpacity={0.5}
+                onPress={() => navigation.navigate('PaymentHistory')}>
                 <Text style={styles.chipText}>예약 상세</Text>
               </TouchableOpacity>
             </View>

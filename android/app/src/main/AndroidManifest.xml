@@ -30,5 +30,8 @@
       <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="96xve4j2vc" />
+      <!-- <meta-data
+        android:name="android.permission-group.LOCATION"
+        android:value="We need location permission to provide better services." /> -->
     </application>
 </manifest>

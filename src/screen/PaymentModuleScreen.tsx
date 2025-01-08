@@ -1,13 +1,10 @@
 import {StyleSheet, View} from 'react-native';
-import Image from '../components/Map/Image';
-import Navermap from '../components/Map/Navermap';
-import Filter from '../components/Map/Filter';
+import Payment from '../components/Payment/Payment';
 
-function Map() {
+function PaymentModuleScreen() {
   return (
     <View style={styles.container}>
-      <Filter />
-      <Navermap />
+      <Payment />
     </View>
   );
 }
@@ -18,4 +15,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default Map;
+export default PaymentModuleScreen;

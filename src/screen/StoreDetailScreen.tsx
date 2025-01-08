@@ -2,7 +2,7 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import Image from '../components/Detail/Image';
 import Body from '../components/Detail/Body';
 
-function Detail(props: any) {
+function StoreDetailScreen(props: any) {
   const {params = {}} = props?.route;
   return (
     <View style={styles.container}>
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default Detail;
+export default StoreDetailScreen;

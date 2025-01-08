@@ -15,10 +15,15 @@ export type DetailProps = {
 
 export type RootStackParamList = {
   Home: undefined;
-  Upload: undefined;
-  List: ListProps;
-  Detail: DetailProps;
+  StoreList: ListProps;
+  StoreDetail: {storeId: string};
+  ProductDetail: {productId: string};
+  Payment: {orderId: string};
   Map: undefined;
+  Profile: undefined;
+  PaymentHistory: undefined;
+  PaymentModule: undefined;
+  Upload: undefined;
 };
 
 export type NavigationProp = NativeStackNavigationProp<RootStackParamList>;

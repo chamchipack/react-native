@@ -36,23 +36,25 @@ const ContentList = ({selectedId = ''}) => {
     }
   }, [currentId, contents]);
 
-  const renderItem = ({item}) => (
-    <TouchableOpacity
-      onPress={() => setCurrentId(item.id)}
-      style={[
-        styles.itemContainer,
-        {
-          width: itemWidth,
-          marginRight: spacing,
-          opacity: item.id === currentId ? 1 : 0.3,
-        },
-      ]}>
-      <View style={styles.imageContainer}>
-        <Image source={item.image} style={styles.image} resizeMode="cover" />
-      </View>
-      <Text style={styles.itemText}>{item.name}</Text>
-    </TouchableOpacity>
-  );
+  const renderItem = ({item}) => {
+    return (
+      <TouchableOpacity
+        onPress={() => setCurrentId(item.id)}
+        style={[
+          styles.itemContainer,
+          {
+            width: itemWidth,
+            marginRight: spacing,
+            opacity: item.id === currentId ? 1 : 0.3,
+          },
+        ]}>
+        <View style={styles.imageContainer}>
+          <Image source={item.image} style={styles.image} resizeMode="cover" />
+        </View>
+        <Text style={styles.itemText}>{item.name}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   const getItemLayout = (data, index) => ({
     length: itemWidth + spacing,
@@ -70,7 +72,7 @@ const ContentList = ({selectedId = ''}) => {
       contentContainerStyle={styles.container}
       showsHorizontalScrollIndicator={false}
       getItemLayout={getItemLayout}
-      initialScrollIndex={contents.findIndex(item => item.id === currentId)}
+      // initialScrollIndex={contents.findIndex(item => item.id === currentId)}
       onScrollToIndexFailed={info => {
         const wait = new Promise(resolve => setTimeout(resolve, 500));
         wait.then(() => {

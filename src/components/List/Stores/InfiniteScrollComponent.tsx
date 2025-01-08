@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  Pressable,
 } from 'react-native';
 
 import {StoreList} from '../popular';
@@ -61,10 +62,9 @@ const InfiniteScrollComponent = () => {
   const renderItem = ({item}) => {
     return (
       <>
-        <TouchableOpacity
+        <Pressable
           style={styles.storeContainer}
-          onPress={() => navigation.navigate('Detail', item)}
-          activeOpacity={0.8}>
+          onPress={() => navigation.navigate('StoreDetail', item)}>
           <Text style={styles.storeTitle}>{item.title}</Text>
 
           <FlatList
@@ -76,7 +76,7 @@ const InfiniteScrollComponent = () => {
             contentContainerStyle={styles.listContent}
             ItemSeparatorComponent={() => <View style={{width: 10}} />}
           />
-        </TouchableOpacity>
+        </Pressable>
         <View style={{padding: 10}}>
           <View
             style={{

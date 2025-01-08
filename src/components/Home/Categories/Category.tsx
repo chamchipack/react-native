@@ -25,7 +25,7 @@ export default function Category({item, index}: Props) {
   return (
     <TouchableOpacity
       key={item.id}
-      onPress={() => navigation.navigate('List', item)}
+      onPress={() => navigation.navigate('StoreList', item)}
       style={[
         styles.itemContainer,
         {
@@ -51,17 +51,6 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderRadius: 10,
     overflow: 'hidden',
-    // borderWidth: 1,
-    // borderColor: '#dfdfdf',
-    // shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: -2,
-    // },
-    // shadowOpacity: 0.25,
-    // shadowRadius: 3.84,
-
-    // elevation: 5,
     backgroundColor: '#fff',
   },
   image: {
