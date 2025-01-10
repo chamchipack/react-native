@@ -19,3 +19,7 @@
 1/1 네이티브 시작 ios 환경 구축
 1/4 디자이너 의뢰
 1/6 안드로이드 환경 구축 동시 개발 시작
+
+- 결제 모듈 좀더 구체화
+- 사진 선택 및 찍기 모듈화
+  npm install react-native-image-picker react-native-vision-camera react-native-permissions

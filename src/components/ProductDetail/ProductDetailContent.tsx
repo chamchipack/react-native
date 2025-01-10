@@ -3,6 +3,7 @@ import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {CheckBox} from 'react-native-elements';
 import {NavigationProp} from '../../navigation/type';
 import {useNavigation} from '@react-navigation/native';
+import PictureAccess from './PictureAccess';
 
 const ProductDetailContent = () => {
   const navigation = useNavigation<NavigationProp>();
@@ -82,24 +83,7 @@ const ProductDetailContent = () => {
         <Text>+ 500원</Text>
       </View>
 
-      {/* <CheckBox
-        title="Radio Button 1"
-        checked={radioSelected === 'radio1'}
-        onPress={() => setRadioSelected('radio1')}
-        checkedIcon="dot-circle-o"
-        uncheckedIcon="circle-o"
-        containerStyle={styles.checkboxContainer}
-        textStyle={styles.checkboxText}
-      />
-      <CheckBox
-        title="Radio Button 2"
-        checked={radioSelected === 'radio2'}
-        onPress={() => setRadioSelected('radio2')}
-        checkedIcon="dot-circle-o"
-        uncheckedIcon="circle-o"
-        containerStyle={styles.checkboxContainer}
-        textStyle={styles.checkboxText}
-      /> */}
+      <PictureAccess />
 
       <TouchableOpacity
         style={styles.button}

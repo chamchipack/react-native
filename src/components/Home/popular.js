@@ -10,7 +10,7 @@ export const popularStores = [
     id: '2',
     name: '이디야커피 홍대점',
     address: '서울 마포구 홍익로 456',
-    image: require('../../image/hair.png'),
+    image: require('../../image/tatoo.png'),
   },
   {
     id: '3',

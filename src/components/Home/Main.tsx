@@ -13,7 +13,7 @@ export default function Main() {
       <Body />
       <Reservation />
       <Banner />
-      <MapButton />
+      {/* <MapButton /> */}
       <Popular />
     </>
   );

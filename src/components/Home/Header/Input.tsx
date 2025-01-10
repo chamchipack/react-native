@@ -17,7 +17,7 @@ export default function Input() {
         returnKeyType="search"
       />
       <TouchableOpacity style={styles.iconContainer}>
-        <MaterialIcons name="search" size={20} color={inputColor} />
+        <MaterialIcons name="search" size={20} />
       </TouchableOpacity>
     </View>
   );
@@ -30,17 +30,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 15,
     paddingHorizontal: 10,
-    backgroundColor: '#F2E8EB',
+    backgroundColor: '#ffffff',
     // iOS 그림자
-    // shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 1,
-    // },
-    // shadowOpacity: 0.25,
-    // shadowRadius: 3.84,
-    // // Android 그림자
-    // elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    // Android 그림자
+    elevation: 3,
   },
   iconContainer: {
     padding: 5,
@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 14,
     paddingLeft: 4,
-    color: inputColor, // 텍스트 색상 명시
+    // color: inputColor,
   },
 });

@@ -33,13 +33,13 @@ function MapButton() {
               </View>
             </View>
           </TouchableOpacity>
-          <View style={styles.alertContainer}>
+          {/* <View style={styles.alertContainer}>
             <Image
               source={require('../../../image/alert.png')}
               resizeMode="cover"
               style={styles.alertImage}
             />
-          </View>
+          </View> */}
         </View>
       </View>
     </View>

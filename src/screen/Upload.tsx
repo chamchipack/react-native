@@ -1,12 +1,10 @@
 import {StyleSheet, View} from 'react-native';
-import InfiniteScrollComponent from './Test';
-import Payment from '../components/Payment/Payment';
+import CameraComponent from './Camera';
 
-function Upload(props) {
+function UploadScreen() {
   return (
     <View style={styles.container}>
-      <InfiniteScrollComponent />
-      {/* <Payment navigation={props.navigation} /> */}
+      <CameraComponent />
     </View>
   );
 }
@@ -17,4 +15,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default Upload;
+export default UploadScreen;

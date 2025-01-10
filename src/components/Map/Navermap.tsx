@@ -83,6 +83,7 @@ async function requestPermission() {
             buttonPositive: 'OK',
           },
         );
+        console.log(granted);
         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
           console.log('Location permission granted');
           return 'granted';
@@ -117,7 +118,6 @@ function Navermap() {
       try {
         const result = await requestPermission();
         if (result === 'granted' && Platform.OS === 'ios') {
-          console.log('????');
           try {
             Geolocation.getCurrentPosition(
               pos => {
@@ -171,9 +171,9 @@ function Navermap() {
       <NaverMapView
         style={{flex: 1}}
         onInitialized={() => {
-          return console.log('initialized!');
+          // return console.log('initialized!');
         }}
-        initialRegion={position}
+        // initialRegion={position}
         region={deviceLocation}
         clusters={Cluster}>
         <NaverMapMarkerOverlay

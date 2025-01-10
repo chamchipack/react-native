@@ -29,7 +29,8 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FCF7FA',
+    // backgroundColor: '#FCF7FA',
+    backgroundColor: '#f7f7f7',
   },
 });
 

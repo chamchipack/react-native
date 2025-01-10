@@ -18,7 +18,7 @@ function StoreListScreen({route}: any) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FCF7FA',
+    backgroundColor: '#f7f7f7',
     flex: 1,
   },
 });

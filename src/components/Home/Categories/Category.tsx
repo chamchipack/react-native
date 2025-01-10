@@ -10,9 +10,12 @@ import {ListProps, NavigationProp} from '../../../navigation/type';
 import {useNavigation} from '@react-navigation/native';
 
 const screenWidth = Dimensions.get('window').width;
-const numColumns = 5;
-const spacing = 15;
-const itemWidth = (screenWidth - 40 - spacing * (numColumns - 1)) / numColumns;
+const numColumns = 6; // 한 줄에 몇 개의 아이템
+const spacing = 15; // 아이템 간 간격
+const containerPadding = 20; // 좌우 여백
+const itemWidth = 60;
+// (screenWidth - containerPadding * 2 - spacing * (numColumns - 1)) /
+// numColumns;
 
 interface Props {
   item: ListProps;
@@ -43,7 +46,7 @@ export default function Category({item, index}: Props) {
 
 const styles = StyleSheet.create({
   itemContainer: {
-    marginBottom: 20,
+    // marginBottom: 10,
     alignItems: 'center',
   },
   imageContainer: {

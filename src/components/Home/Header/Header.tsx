@@ -35,7 +35,7 @@ const Head = () => {
         </View>
 
         <View style={styles.header}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => navigation.navigate('Upload')}
             style={styles.iconContainer}>
             <MaterialIcons
@@ -44,7 +44,7 @@ const Head = () => {
               color="black"
               style={{marginLeft: 10}}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
 

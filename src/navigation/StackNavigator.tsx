@@ -11,6 +11,7 @@ import ProfileScreen from '../screen/ProfileScreen';
 import PaymentHistoryScreen from '../screen/PaymentHistoryScreen';
 import PaymentModuleScreen from '../screen/PaymentModuleScreen';
 import {RootStackParamList} from './type';
+import UploadScreen from '../screen/Upload';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -39,7 +40,7 @@ export default function StackNavigator() {
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="PaymentHistory" component={PaymentHistoryScreen} />
       <Stack.Screen name="PaymentModule" component={PaymentModuleScreen} />
-      {/* <Stack.Screen name="Upload" component={UploadScreen} /> */}
+      <Stack.Screen name="Upload" component={UploadScreen} />
     </Stack.Navigator>
   );
 }
